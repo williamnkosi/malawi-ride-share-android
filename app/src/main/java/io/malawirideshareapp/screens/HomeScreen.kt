@@ -4,8 +4,10 @@ import android.graphics.Color
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CutCornerShape
@@ -35,28 +37,21 @@ fun HomeScreen() {
         Column(
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
-            , modifier = Modifier.padding(16.dp).fillMaxSize()
+            , modifier = Modifier
+                .padding(16.dp)
+                .fillMaxSize()
         ) {
 
-           SearchBar(text = text)
+            SearchBar()
+            Spacer(modifier = Modifier.height(8.dp))
+            PreviousSearchItems()
         }
     }
 }
 
+@Preview
 @Composable
-fun SearchBar(text:String) {
-    Row(horizontalArrangement = Arrangement.SpaceBetween,  modifier = Modifier.fillMaxWidth() ) {
-        OutlinedTextField(value = "testing", onValueChange = {  }
-
-        )
-        Button( shape = CutCornerShape(8) ,onClick = { /*TODO*/ },) {
-            Text("Search")
-        }
-    }
+    fun HomeScreenPreview() {
+    HomeScreen()
 }
 
-@Preview(showBackground = true)
-@Composable
-fun SearchBarPreview () {
-    SearchBar(text = "testing")
-}
