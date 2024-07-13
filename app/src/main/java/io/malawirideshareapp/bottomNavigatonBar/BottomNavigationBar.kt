@@ -1,5 +1,6 @@
 package io.malawirideshareapp.bottomNavigatonBar
 
+import android.util.Log
 import androidx.compose.material3.Badge
 import androidx.compose.material3.BadgedBox
 import androidx.compose.material3.Icon
@@ -36,6 +37,7 @@ fun BottomNavigationBar(navController: NavHostController){
             NavigationBarItem(
                 selected = selectedItemIndex == index,
                 onClick = { selectedItemIndex = index
+                    navController.navigate(item.route)
                           },
                 label = {
                     Text(text = item.title)
@@ -44,8 +46,6 @@ fun BottomNavigationBar(navController: NavHostController){
                     if(item.badgeCount != null){
                         Badge{
                             Text(text = item.badgeCount.toString())
-
-                            navController.navigate(item.route)
                         }
                     } else if(item.hasNews){
                         Badge()
