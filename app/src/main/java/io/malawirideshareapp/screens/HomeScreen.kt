@@ -52,23 +52,6 @@ fun HomeScreen() {
             Spacer(modifier = Modifier.height(8.dp))
             PreviousSearchItems()
 
-            val singapore = LatLng(1.35, 103.87)
-            val cameraPositionState = rememberCameraPositionState {
-                position = CameraPosition.fromLatLngZoom(singapore, 10f)
-            }
-
-            val mySecretKey = BuildConfig.GOOGLE_MAPS_API_KEY
-            Log.i("testing", mySecretKey)
-            GoogleMap(
-                modifier = Modifier.fillMaxSize(),
-                cameraPositionState = cameraPositionState
-            ) {
-                Marker(
-                    state = MarkerState(position = singapore),
-                    title = "Singapore",
-                    snippet = "Marker in Singapore"
-                )
-            }
         }
     }
 }
