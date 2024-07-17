@@ -26,6 +26,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MalawiRideShareAppTheme {
+
                 // A surface container using the 'background' color from the theme
                 val navController = rememberNavController()
                 Surface(

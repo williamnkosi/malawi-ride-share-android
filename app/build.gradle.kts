@@ -90,7 +90,7 @@ dependencies {
     // Google Maps
     implementation("com.google.maps.android:maps-compose:6.1.0")
 
-    implementation("com.google.accompanist:accompanist-permissions:<latest_version>")
+    implementation("androidx.lifecycle:lifecycle-viewmodel:2.8.3")
 
 
 }
